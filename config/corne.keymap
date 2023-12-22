@@ -20,6 +20,69 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            bindings = <&kp ESC>;
+            key-positions = <2 1>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <4 5>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_win {
+            bindings = <&kp LEFT_WIN>;
+            key-positions = <6 7>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_del {
+            bindings = <&kp DELETE>;
+            key-positions = <9 8>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_bs {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <7 8>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_caps {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <16 19>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+    };
+
+    macros {
+        par_macro: par_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "PAR_MACRO";
+        };
+
+        bra_macro: bra_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            label = "BRA_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -32,10 +95,10 @@
 
             label = "Base";
             bindings = <
-&none  &kht QUESTION Q  &kht AT_SIGN W    &kht RA(E) E   &kp R              &kp T        &kp Y         &kht RA(U) U       &kht RA(I) I     &kht RA(O) O          &kp P                &none
-&none  &kht RA(A) A     &kht RIGHT_ALT S  &kht LCTRL D   &kht LEFT_SHIFT F  &kp G        &kp H         &kht LEFT_SHIFT J  &kht LCTRL K     &kht RIGHT_ALT L      &kht PLUS SEMICOLON  &none
-&none  &kp Z            &kp X             &kp C          &kp V              &kp B        &kht RA(N) N  &kht SQT M         &kht HASH COMMA  &kht EXCLAMATION DOT  &kp FSLH             &none
-                                          &kp BACKSPACE  &mo 1              &kp SPACE    &kp RET       &mo 2              &kp TAB
+&none  &kht QUESTION Q  &kht AT_SIGN W    &kht RA(E) E   &kp R              &kp T        &kp Y         &kht RA(U) U       &kht RA(I) I          &kht RA(O) O          &kp P                 &none
+&none  &kht RA(A) A     &kht RIGHT_ALT S  &kht LCTRL D   &kht LEFT_SHIFT F  &lt 3 G      &kht MINUS H  &kht LEFT_SHIFT J  &kht LCTRL K          &kht RIGHT_ALT L      &kht PLUS SEMICOLON   &none
+&none  &kp Z            &kht LC(X) X      &kht LC(C) C   &kht LC(V) V       &kp B        &kht RA(N) N  &kht SQT M         &kht HASH COMMA       &kht EXCLAMATION DOT  &kht RA(SLASH) SLASH  &none
+                                          &kp BACKSPACE  &mo 1              &kp SPACE    &kp RET       &mo 2              &kht PRINTSCREEN TAB
             >;
         };
 
@@ -46,12 +109,12 @@
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            label = "Lower";
+            label = "Num+BT";
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &trans          &trans    &trans    &kp RALT
+&none  &bt BT_CLR  &trans  &trans  &trans  &bt BT_SEL 0    &kp PERIOD    &kp N7        &kp N8        &kp N9        &trans     &none
+&none  &trans      &trans  &trans  &trans  &bt BT_SEL 2    &kp SLASH     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS  &trans
+&none  &trans      &trans  &trans  &trans  &bt BT_SEL 3    &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS   &trans
+                           &trans  &trans  &trans          &trans        &trans        &kp N0
             >;
         };
 
@@ -62,13 +125,24 @@
             // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            label = "Raise";
+            label = "Media+Sym";
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&none  &trans  &trans     &kp PIPE          &kp LEFT_BRACE    &kp RBRC             &trans  &trans             &trans            &trans           &trans  &none
+&none  &trans  &kp TILDE  &kp MINUS         &kp LPAR          &kp RPAR             &trans  &kp C_VOLUME_DOWN  &kp C_MUTE        &kp C_VOLUME_UP  &trans  &none
+&none  &trans  &trans     &kp GREATER_THAN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET    &trans  &kp C_PREVIOUS     &kp C_PLAY_PAUSE  &kp C_NEXT       &trans  &none
+                          &trans            &trans            &trans               &trans  &trans             &trans
             >;
+        };
+
+        nav_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &par_macro  &kp UP_ARROW  &bra_macro  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT    &kp DOWN      &kp RIGHT   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME    &trans        &kp END     &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans      &trans
+            >;
+
+            label = "NAV";
         };
     };
 };
