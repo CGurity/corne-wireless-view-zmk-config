@@ -93,10 +93,10 @@
 
             label = "Base";
             bindings = <
-&none  &kht QUESTION Q  &kht AT_SIGN W    &kht RA(E) E   &kp R              &kp T        &kp Y         &kht RA(U) U       &kht RA(I) I          &kht RA(O) O          &kp P                 &none
-&none  &kht RA(A) A     &kht RIGHT_ALT S  &kht LCTRL D   &kht LEFT_SHIFT F  &lt 3 G      &kht MINUS H  &kht LEFT_SHIFT J  &kht LCTRL K          &kht RIGHT_ALT L      &kht PLUS SEMICOLON   &none
-&none  &kp Z            &kht LC(X) X      &kht LC(C) C   &kht LC(V) V       &kp B        &kht RA(N) N  &kht SQT M         &kht HASH COMMA       &kht EXCLAMATION DOT  &kht RA(SLASH) SLASH  &none
-                                          &kp BACKSPACE  &mo 1              &kp SPACE    &kp RET       &mo 2              &kht PRINTSCREEN TAB
+&none  &kht QUESTION Q  &kht AT_SIGN W    &kht RA(E) E  &kp R              &kp T             &kp Y          &kht RA(U) U       &kht RA(I) I     &kht RA(O) O          &kp P                 &none
+&none  &kht RA(A) A     &kht RIGHT_ALT S  &kht LCTRL D  &kht LEFT_SHIFT F  &lt 3 G           &kht MINUS H   &kht LEFT_SHIFT J  &kht LCTRL K     &kht RIGHT_ALT L      &kht PLUS SEMICOLON   &none
+&none  &kp Z            &kht LC(X) X      &kht LC(C) C  &kht LC(V) V       &kp B             &kht RA(N) N   &kht SQT M         &kht HASH COMMA  &kht EXCLAMATION DOT  &kht RA(SLASH) SLASH  &none
+                                          &mo 1         &kp SPACE          &kp LEFT_SHIFT    &kp BACKSPACE  &kp RET            &mo 2
             >;
         };
 
