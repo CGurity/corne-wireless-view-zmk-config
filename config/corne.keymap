@@ -34,7 +34,7 @@
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <37 40>;
+            key-positions = <16 19>;
             timeout-ms = <50>;
             require-prior-idle-ms = <0>;
         };
@@ -47,19 +47,13 @@
 
         combo_del {
             bindings = <&kp DELETE>;
-            key-positions = <9 8>;
-            timeout-ms = <50>;
-        };
-
-        combo_bs {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <7 8>;
+            key-positions = <38 39>;
             timeout-ms = <50>;
         };
 
         combo_caps {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <16 19>;
+            key-positions = <17 18>;
             timeout-ms = <50>;
             layers = <0>;
         };
@@ -71,7 +65,7 @@
 
         alt {
             bindings = <&sk RIGHT_ALT>;
-            key-positions = <38 39>;
+            key-positions = <37 40>;
         };
     };
 
@@ -88,6 +82,13 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
             label = "BRA_MACRO";
+        };
+
+        cur_macro: cur_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
+            label = "CUR_MACRO";
         };
     };
 
@@ -144,9 +145,9 @@
 
         nav_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &par_macro  &kp UP_ARROW  &bra_macro  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT    &kp DOWN      &kp RIGHT   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME    &trans        &kp END     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &par_macro  &kp UP_ARROW  &bra_macro  &cur_macro  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT    &kp DOWN      &kp RIGHT   &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME    &trans        &kp END     &trans      &trans
                         &trans  &trans  &trans    &trans  &trans      &trans
             >;
 
