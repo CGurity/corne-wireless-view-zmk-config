@@ -107,7 +107,7 @@
 &none  &kht QUESTION Q  &kht AT_SIGN W   &kht RA(E) E  &kp R              &kp T             &kp Y          &kht RA(U) U       &kht RA(I) I     &kht RA(O) O          &kp P                 &none
 &none  &kht RA(A) A     &kht LEFT_ALT S  &kht LCTRL D  &kht LEFT_SHIFT F  &lt 3 G           &kht MINUS H   &kht LEFT_SHIFT J  &kht LCTRL K     &kht LEFT_ALT L       &kht PLUS SEMICOLON   &none
 &none  &kp Z            &kht LC(X) X     &kht LC(C) C  &kht LC(V) V       &kht LC(B) B      &kht RA(N) N   &kht SQT M         &kht HASH COMMA  &kht EXCLAMATION DOT  &kht RA(SLASH) SLASH  &none
-                                         &tog 1        &kp SPACE          &kp LEFT_SHIFT    &kp BACKSPACE  &kp RET            &lt 2 TAB
+                                         &to 1         &kp SPACE          &kp LEFT_SHIFT    &kp BACKSPACE  &kp RET            &lt 2 TAB
             >;
         };
 
@@ -123,7 +123,7 @@
 &none  &trans        &kp HOME      &kp UP_ARROW    &kp END       &trans          &kp PERIOD    &kp N7        &kp N8        &kp N9        &kp KP_EQUAL  &none
 &none  &trans        &kp LEFT      &kp DOWN_ARROW  &kp RIGHT     &bt BT_CLR      &kp SLASH     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS     &trans
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4    &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &trans
-                                   &tog 0          &trans        &trans          &trans        &trans        &kp N0
+                                   &to 0           &trans        &trans          &trans        &trans        &kp N0
             >;
         };
 
@@ -136,7 +136,7 @@
 
             label = "Media+Sym";
             bindings = <
-&none  &trans  &trans     &kp PIPE          &kp LEFT_BRACE    &kp RBRC             &trans  &tog 0             &trans            &tog 4           &trans  &none
+&none  &trans  &trans     &kp PIPE          &kp LEFT_BRACE    &kp RBRC             &trans  &to 0              &trans            &to 4            &trans  &none
 &none  &trans  &kp TILDE  &kp MINUS         &kp LPAR          &kp RPAR             &trans  &kp C_VOLUME_DOWN  &kp C_MUTE        &kp C_VOLUME_UP  &trans  &none
 &none  &trans  &trans     &kp GREATER_THAN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET    &trans  &kp C_PREVIOUS     &kp C_PLAY_PAUSE  &kp C_NEXT       &trans  &none
                           &trans            &trans            &trans               &trans  &trans             &trans
