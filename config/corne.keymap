@@ -28,20 +28,20 @@
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <2 1>;
+            key-positions = <13 14>;
             timeout-ms = <50>;
         };
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <16 19>;
+            key-positions = <16 15 14>;
             timeout-ms = <50>;
             require-prior-idle-ms = <0>;
         };
 
         combo_win {
             bindings = <&kp LEFT_WIN>;
-            key-positions = <6 7>;
+            key-positions = <19 20>;
             timeout-ms = <50>;
         };
 
